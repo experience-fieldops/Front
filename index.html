@@ -5,6 +5,40 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FieldOps - Plataforma de Inspeção em Campo</title>
+
+    <!--
+      Content-Security-Policy (issue #76)
+      ─────────────────────────────────────────────────────────────────────────
+      Define de onde cada tipo de recurso pode ser carregado.
+      Esta meta tag complementa o header CSP enviado pelo backend.
+
+      Diretivas:
+        default-src 'self'          → bloqueia qualquer origem não listada
+        script-src  'self'          → apenas scripts do próprio domínio
+        style-src   'self' 'unsafe-inline' → estilos inline necessários (Vite/CSS-in-JS)
+        img-src     'self' data:    → imagens do domínio e base64
+        font-src    'self'          → fontes do domínio
+        connect-src 'self'          → requisições XHR/fetch apenas para o próprio backend
+                                      (adicionar a URL da API em produção aqui)
+        frame-ancestors 'none'      → impede que esta página seja embarcada em iframe
+        form-action 'self'          → formulários só submetem para o próprio domínio
+      ─────────────────────────────────────────────────────────────────────────
+      Ajuste connect-src ao adicionar a URL da API de produção:
+        connect-src 'self' https://api.fieldops.com.br
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        font-src 'self';
+        connect-src 'self';
+        frame-ancestors 'none';
+        form-action 'self'
+      "
+    />
   </head>
   <body>
     <div id="root"></div>
