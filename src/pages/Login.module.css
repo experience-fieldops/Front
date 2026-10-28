@@ -122,7 +122,6 @@
   letter-spacing: 0.5px;
   transition: border-color 0.15s;
   box-sizing: border-box;
-  text-transform: uppercase;
 }
 
 .input::placeholder {

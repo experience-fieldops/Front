@@ -91,7 +91,7 @@ export function Login() {
                 className={styles.input}
                 placeholder="E-MAIL"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value.toLowerCase())}
                 required
                 autoComplete="email"
                 aria-label="E-mail"

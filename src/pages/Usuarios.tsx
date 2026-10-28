@@ -200,7 +200,7 @@ export function Usuarios() {
             <div className={styles.formField}>
               <label htmlFor="u-email" className={styles.formLabel}>E-mail *</label>
               <input id="u-email" type="email" className={styles.formInput} value={form.email}
-                onChange={e => setForm({ ...form, email: e.target.value })} required />
+                onChange={e => setForm({ ...form, email: e.target.value.toLowerCase() })} required />
             </div>
             {!editing && (
               <div className={styles.formField}>
