@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { FiSearch, FiPlus, FiFilter, FiCalendar, FiMapPin, FiUser, FiCheck, FiEdit, FiTrash2, FiClock, FiAlertCircle, FiEye } from 'react-icons/fi';
 
 interface Task {
   id: number;
@@ -104,11 +103,11 @@ const TaskManager = () => {
 
   const getStatusConfig = (status: Task['status']) => {
     const configs = {
-      'pending': { label: 'Pendente', color: 'bg-warning-500', bgColor: 'bg-yellow-50', textColor: 'text-yellow-700', icon: FiClock },
-      'in_progress': { label: 'Em andamento', color: 'bg-primary-600', bgColor: 'bg-blue-50', textColor: 'text-blue-700', icon: FiClock },
-      'completed': { label: 'Concluída', color: 'bg-success-500', bgColor: 'bg-green-50', textColor: 'text-green-700', icon: FiCheck },
-      'overdue': { label: 'Atrasada', color: 'bg-error-500', bgColor: 'bg-red-50', textColor: 'text-red-700', icon: FiAlertCircle },
-      'review': { label: 'Em revisão', color: 'bg-purple-600', bgColor: 'bg-purple-50', textColor: 'text-purple-700', icon: FiEye }
+      'pending': { label: 'Pendente', color: 'bg-warning-500', bgColor: 'bg-yellow-50', textColor: 'text-yellow-700', icon: '⏰' },
+      'in_progress': { label: 'Em andamento', color: 'bg-primary-600', bgColor: 'bg-blue-50', textColor: 'text-blue-700', icon: '⏰' },
+      'completed': { label: 'Concluída', color: 'bg-success-500', bgColor: 'bg-green-50', textColor: 'text-green-700', icon: '✓' },
+      'overdue': { label: 'Atrasada', color: 'bg-error-500', bgColor: 'bg-red-50', textColor: 'text-red-700', icon: '⚠️' },
+      'review': { label: 'Em revisão', color: 'bg-purple-600', bgColor: 'bg-purple-50', textColor: 'text-purple-700', icon: '👁️' }
     };
     return configs[status];
   };
@@ -250,7 +249,7 @@ const TaskManager = () => {
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
           <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
-            <FiCalendar className="w-5 h-5 text-primary-600" />
+            <span className="text-xl">??</span>
           </div>
           <div>
             <h2 className="text-2xl font-bold text-neutral-900">Gerenciamento de Tarefas</h2>
@@ -276,7 +275,7 @@ const TaskManager = () => {
         <div className="stats-card hover:border-blue-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center">
-              <FiClock className="w-6 h-6 text-blue-600" />
+              <span className="text-xl">?</span>
             </div>
             <div>
               <div className="stats-value">{stats.inProgress}</div>
@@ -288,7 +287,7 @@ const TaskManager = () => {
         <div className="stats-card hover:border-green-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center">
-              <FiCheck className="w-6 h-6 text-green-600" />
+              <span className="text-xl">?</span>
             </div>
             <div>
               <div className="stats-value">{stats.completed}</div>
@@ -300,7 +299,7 @@ const TaskManager = () => {
         <div className="stats-card hover:border-yellow-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-yellow-50 flex items-center justify-center">
-              <FiClock className="w-6 h-6 text-yellow-600" />
+              <span className="text-xl">?</span>
             </div>
             <div>
               <div className="stats-value">{stats.pending}</div>
@@ -312,7 +311,7 @@ const TaskManager = () => {
         <div className="stats-card hover:border-red-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center">
-              <FiAlertCircle className="w-6 h-6 text-red-600" />
+              <span className="text-xl">??</span>
             </div>
             <div>
               <div className="stats-value">{stats.overdue}</div>
@@ -328,7 +327,7 @@ const TaskManager = () => {
           <div className="flex-1">
             <div className="relative max-w-md">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FiSearch className="text-neutral-400" />
+                <span className="text-xl">??</span>
               </div>
               <input
                 type="text"
@@ -343,7 +342,7 @@ const TaskManager = () => {
           <div className="flex flex-wrap gap-3">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FiFilter className="text-neutral-400" />
+                <span className="text-xl">??</span>
               </div>
               <select
                 value={selectedStatus}
@@ -374,7 +373,7 @@ const TaskManager = () => {
               onClick={handleCreateTask}
               className="btn btn-primary flex items-center gap-2"
             >
-              <FiPlus className="w-4 h-4" />
+              <span className="text-xl">?</span>
               Nova Tarefa
             </button>
           </div>
@@ -386,7 +385,6 @@ const TaskManager = () => {
         {filteredTasks.map((task) => {
           const statusConfig = getStatusConfig(task.status);
           const priorityConfig = getPriorityConfig(task.priority);
-          const StatusIcon = statusConfig?.icon || FiClock;
           
           return (
             <div key={task.id} className="card hover:shadow-md transition-all duration-300 hover:scale-[1.01]">
@@ -416,7 +414,7 @@ const TaskManager = () => {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center text-neutral-600">
                     <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center mr-2">
-                      <FiUser className="w-4 h-4 text-neutral-500" />
+                      <span className="text-xl">??</span>
                     </div>
                     <div>
                       <div className="text-xs text-neutral-500">Técnico</div>
@@ -425,7 +423,7 @@ const TaskManager = () => {
                   </div>
                   <div className="flex items-center text-neutral-600">
                     <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center mr-2">
-                      <FiCalendar className="w-4 h-4 text-neutral-500" />
+                      <span className="text-xl">??</span>
                     </div>
                     <div>
                       <div className="text-xs text-neutral-500">Vencimento</div>
@@ -445,7 +443,7 @@ const TaskManager = () => {
                   </div>
                   <div className="flex items-center text-neutral-600">
                     <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center mr-2">
-                      <FiMapPin className="w-4 h-4 text-neutral-500" />
+                      <span className="text-xl">??</span>
                     </div>
                     <div>
                       <div className="text-xs text-neutral-500">Local</div>
@@ -473,21 +471,21 @@ const TaskManager = () => {
                       className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition"
                       title="Atribuir técnico"
                     >
-                      <FiUser className="w-4 h-4" />
+                      <span className="text-xl">??</span>
                     </button>
                     <button 
                       onClick={() => handleStatusChange(task.id, 'completed')}
                       className="p-2 text-green-600 hover:bg-green-50 rounded-lg transition"
                       title="Marcar como concluída"
                     >
-                      <FiCheck className="w-4 h-4" />
+                      <span className="text-xl">?</span>
                     </button>
                     <button 
                       onClick={() => handleStatusChange(task.id, 'review')}
                       className="p-2 text-purple-600 hover:bg-purple-50 rounded-lg transition"
                       title="Enviar para revisão"
                     >
-                      <FiEye className="w-4 h-4" />
+                      <span className="text-xl">???</span>
                     </button>
                     <button 
                       onClick={() => handleDeleteTask(task.id)}
@@ -531,7 +529,7 @@ const TaskManager = () => {
               onClick={handleCreateTask}
               className="btn btn-primary flex items-center gap-2"
             >
-              <FiPlus className="w-4 h-4" />
+              <span className="text-xl">?</span>
               Criar Primeira Tarefa
             </button>
           </div>
