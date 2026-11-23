@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { FiSearch, FiPlus, FiFilter, FiMail, FiPhone, FiMapPin, FiStar, FiCheckCircle, FiClock, FiUserPlus, FiMessageSquare, FiBarChart2, FiEye } from 'react-icons/fi';
 
 interface Technician {
   id: number;
@@ -256,7 +255,7 @@ const Technicians = () => {
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
           <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
-            <FiUserPlus className="w-5 h-5 text-primary-600" />
+            
           </div>
           <div>
             <h2 className="text-2xl font-bold text-neutral-900">Técnicos</h2>
@@ -270,7 +269,7 @@ const Technicians = () => {
         <div className="stats-card hover:border-primary-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-primary-50 flex items-center justify-center">
-              <FiUserPlus className="w-6 h-6 text-primary-600" />
+              
             </div>
             <div>
               <div className="stats-value">{stats.total}</div>
@@ -282,7 +281,7 @@ const Technicians = () => {
         <div className="stats-card hover:border-green-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center">
-              <FiCheckCircle className="w-6 h-6 text-green-600" />
+              
             </div>
             <div>
               <div className="stats-value">{stats.available}</div>
@@ -294,7 +293,7 @@ const Technicians = () => {
         <div className="stats-card hover:border-yellow-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-yellow-50 flex items-center justify-center">
-              <FiClock className="w-6 h-6 text-yellow-600" />
+              
             </div>
             <div>
               <div className="stats-value">{stats.busy}</div>
@@ -306,7 +305,7 @@ const Technicians = () => {
         <div className="stats-card hover:border-blue-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center">
-              <FiCheckCircle className="w-6 h-6 text-blue-600" />
+              
             </div>
             <div>
               <div className="stats-value">{stats.totalCompleted}</div>
@@ -318,7 +317,7 @@ const Technicians = () => {
         <div className="stats-card hover:border-purple-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-purple-50 flex items-center justify-center">
-              <FiStar className="w-6 h-6 text-purple-600" />
+              
             </div>
             <div>
               <div className="stats-value">{stats.avgRating}</div>
@@ -330,7 +329,7 @@ const Technicians = () => {
         <div className="stats-card hover:border-green-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center">
-              <FiBarChart2 className="w-6 h-6 text-green-600" />
+              
             </div>
             <div>
               <div className="stats-value">{stats.totalTasks}</div>
@@ -346,7 +345,7 @@ const Technicians = () => {
           <div className="flex-1">
             <div className="relative max-w-md">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FiSearch className="text-neutral-400" />
+                <span className="text-xl">??</span>
               </div>
               <input
                 type="text"
@@ -361,7 +360,7 @@ const Technicians = () => {
           <div className="flex flex-wrap gap-3">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FiFilter className="text-neutral-400" />
+                <span className="text-xl">??</span>
               </div>
               <select
                 value={selectedStatus}
@@ -380,7 +379,7 @@ const Technicians = () => {
               onClick={() => setShowAddTechnicianModal(true)}
               className="btn btn-primary flex items-center gap-2"
             >
-              <FiPlus className="w-4 h-4" />
+              
               Adicionar Técnico
             </button>
           </div>
@@ -419,7 +418,7 @@ const Technicians = () => {
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center text-neutral-600">
                     <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center mr-3">
-                      <FiMail className="w-4 h-4 text-neutral-500" />
+                      <span className="text-xl">??</span>
                     </div>
                     <div className="min-w-0">
                       <div className="text-xs text-neutral-500">E-mail</div>
@@ -428,7 +427,7 @@ const Technicians = () => {
                   </div>
                   <div className="flex items-center text-neutral-600">
                     <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center mr-3">
-                      <FiPhone className="w-4 h-4 text-neutral-500" />
+                      
                     </div>
                     <div>
                       <div className="text-xs text-neutral-500">Telefone</div>
@@ -437,7 +436,7 @@ const Technicians = () => {
                   </div>
                   <div className="flex items-center text-neutral-600">
                     <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center mr-3">
-                      <FiMapPin className="w-4 h-4 text-neutral-500" />
+                      
                     </div>
                     <div>
                       <div className="text-xs text-neutral-500">Localização</div>
@@ -500,7 +499,7 @@ const Technicians = () => {
                     onClick={() => handleAssignTask(tech.id)}
                     className="flex-1 btn btn-primary flex items-center justify-center gap-2"
                   >
-                    <FiCheckCircle className="w-4 h-4" />
+                    
                     Atribuir
                   </button>
                   <button 
@@ -508,14 +507,14 @@ const Technicians = () => {
                     className="p-3 border border-neutral-300 text-neutral-600 hover:bg-neutral-50 rounded-lg transition"
                     title="Enviar mensagem"
                   >
-                    <FiMessageSquare className="w-4 h-4" />
+                    
                   </button>
                   <button 
                     onClick={() => handleViewReport(tech.id)}
                     className="p-3 border border-neutral-300 text-neutral-600 hover:bg-neutral-50 rounded-lg transition"
                     title="Ver relatório"
                   >
-                    <FiBarChart2 className="w-4 h-4" />
+                    
                   </button>
                 </div>
               </div>
@@ -528,7 +527,7 @@ const Technicians = () => {
       {filteredTechnicians.length === 0 && (
         <div className="card p-12 text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-neutral-100 mb-4">
-            <FiUserPlus className="w-8 h-8 text-neutral-400" />
+            
           </div>
           <h3 className="text-lg font-semibold text-neutral-900 mb-2">
             Nenhum técnico encontrado
@@ -550,7 +549,7 @@ const Technicians = () => {
               onClick={() => setShowAddTechnicianModal(true)}
               className="btn btn-primary flex items-center gap-2"
             >
-              <FiPlus className="w-4 h-4" />
+              
               Adicionar Primeiro Técnico
             </button>
           </div>

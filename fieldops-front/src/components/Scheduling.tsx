@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { FiSearch, FiPlus, FiFilter, FiCalendar, FiClock, FiMapPin, FiUser, FiAlertCircle, FiCheckCircle, FiX, FiEdit, FiEye, FiPlay, FiDownload, FiShare2 } from 'react-icons/fi';
 
 interface ScheduledInspection {
   id: number;
@@ -298,7 +297,7 @@ const Scheduling = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
-                <FiCalendar className="w-5 h-5 text-primary-600" />
+                <span className="text-xl">??</span>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-neutral-900">Novo Agendamento</h3>
@@ -309,7 +308,7 @@ const Scheduling = () => {
               onClick={() => setShowNewScheduleModal(false)}
               className="text-neutral-400 hover:text-neutral-600 transition"
             >
-              <FiX className="w-5 h-5" />
+              <span className="text-xl">?</span>
             </button>
           </div>
         </div>
@@ -463,7 +462,7 @@ const Scheduling = () => {
               type="submit"
               className="btn btn-primary flex items-center gap-2"
             >
-              <FiCalendar className="w-4 h-4" />
+              <span className="text-xl">?</span>
               Agendar Inspeção
             </button>
           </div>
@@ -480,7 +479,7 @@ const Scheduling = () => {
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
           <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
-            <FiCalendar className="w-5 h-5 text-primary-600" />
+            <span className="text-xl">??</span>
           </div>
           <div>
             <h2 className="text-2xl font-bold text-neutral-900">Agendamento de Inspeções</h2>
@@ -494,7 +493,7 @@ const Scheduling = () => {
         <div className="stats-card hover:border-primary-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center">
-              <FiCalendar className="w-6 h-6 text-blue-600" />
+              <span className="text-xl">??</span>
             </div>
             <div>
               <div className="stats-value">{stats.total}</div>
@@ -506,7 +505,7 @@ const Scheduling = () => {
         <div className="stats-card hover:border-blue-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center">
-              <FiCalendar className="w-6 h-6 text-blue-600" />
+              <span className="text-xl">??</span>
             </div>
             <div>
               <div className="stats-value">{stats.scheduled}</div>
@@ -518,7 +517,7 @@ const Scheduling = () => {
         <div className="stats-card hover:border-yellow-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-yellow-50 flex items-center justify-center">
-              <FiClock className="w-6 h-6 text-yellow-600" />
+              <span className="text-xl">?</span>
             </div>
             <div>
               <div className="stats-value">{stats.inProgress}</div>
@@ -530,7 +529,7 @@ const Scheduling = () => {
         <div className="stats-card hover:border-green-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center">
-              <FiCheckCircle className="w-6 h-6 text-green-600" />
+              <span className="text-xl">?</span>
             </div>
             <div>
               <div className="stats-value">{stats.completed}</div>
@@ -542,7 +541,7 @@ const Scheduling = () => {
         <div className="stats-card hover:border-red-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center">
-              <FiAlertCircle className="w-6 h-6 text-red-600" />
+              <span className="text-xl">??</span>
             </div>
             <div>
               <div className="stats-value">{stats.delayed}</div>
@@ -554,7 +553,7 @@ const Scheduling = () => {
         <div className="stats-card hover:border-neutral-200">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-neutral-50 flex items-center justify-center">
-              <FiX className="w-6 h-6 text-neutral-600" />
+              <span className="w-6 h-6 text-neutral-600" />
             </div>
             <div>
               <div className="stats-value">{stats.cancelled}</div>
@@ -570,7 +569,7 @@ const Scheduling = () => {
           <div className="flex-1">
             <div className="relative max-w-md">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FiSearch className="text-neutral-400" />
+                <span className="text-xl">??</span>
               </div>
               <input
                 type="text"
@@ -585,7 +584,7 @@ const Scheduling = () => {
           <div className="flex flex-wrap gap-3">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FiFilter className="text-neutral-400" />
+                <span className="text-xl">??</span>
               </div>
               <select
                 value={selectedStatus}
@@ -626,7 +625,7 @@ const Scheduling = () => {
               onClick={() => setShowNewScheduleModal(true)}
               className="btn btn-primary flex items-center gap-2"
             >
-              <FiPlus className="w-4 h-4" />
+              <span className="text-xl">?</span>
               Novo Agendamento
             </button>
           </div>
@@ -641,13 +640,13 @@ const Scheduling = () => {
               <h3 className="text-lg font-semibold text-neutral-900">Calendário Semanal</h3>
               <div className="flex items-center gap-2">
                 <button className="p-2 text-neutral-600 hover:bg-neutral-100 rounded-lg">
-                  <FiCalendar className="w-4 h-4" />
+                  <span className="text-xl">?</span>
                 </button>
                 <button className="p-2 text-neutral-600 hover:bg-neutral-100 rounded-lg">
-                  <FiDownload className="w-4 h-4" />
+                  <span className="text-xl">??</span>
                 </button>
                 <button className="p-2 text-neutral-600 hover:bg-neutral-100 rounded-lg">
-                  <FiShare2 className="w-4 h-4" />
+                  <span className="text-xl">??</span>
                 </button>
               </div>
             </div>
@@ -722,7 +721,7 @@ const Scheduling = () => {
                     <div className="text-right">
                       <div className="flex items-center gap-2 mb-1">
                         <div className="w-10 h-10 rounded-lg bg-neutral-100 flex items-center justify-center">
-                          <FiCalendar className="w-5 h-5 text-neutral-600" />
+                          <span className="w-5 h-5 text-neutral-600" />
                         </div>
                         <div>
                           <div className="text-lg font-bold text-neutral-900">
@@ -740,7 +739,7 @@ const Scheduling = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                     <div className="flex items-center text-neutral-600">
                       <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center mr-3">
-                        <FiMapPin className="w-4 h-4 text-neutral-500" />
+                        <span className="text-xl">??</span>
                       </div>
                       <div>
                         <div className="text-xs text-neutral-500">Local</div>
@@ -749,7 +748,7 @@ const Scheduling = () => {
                     </div>
                     <div className="flex items-center text-neutral-600">
                       <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center mr-3">
-                        <FiUser className="w-4 h-4 text-neutral-500" />
+                        <span className="text-xl">??</span>
                       </div>
                       <div>
                         <div className="text-xs text-neutral-500">Técnico</div>
@@ -758,7 +757,7 @@ const Scheduling = () => {
                     </div>
                     <div className="flex items-center text-neutral-600">
                       <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center mr-3">
-                        <FiClock className="w-4 h-4 text-neutral-500" />
+                        <span className="text-xl">?</span>
                       </div>
                       <div>
                         <div className="text-xs text-neutral-500">Duração</div>
@@ -796,7 +795,7 @@ const Scheduling = () => {
                         className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition"
                         title="Ver detalhes"
                       >
-                        <FiEye className="w-4 h-4" />
+                        <span className="text-xl">???</span>
                       </button>
                       
                       {inspection.status === 'scheduled' && (
@@ -806,21 +805,21 @@ const Scheduling = () => {
                             className="p-2 text-yellow-600 hover:bg-yellow-50 rounded-lg transition"
                             title="Reagendar"
                           >
-                            <FiEdit className="w-4 h-4" />
+                            <span className="text-xl">??</span>
                           </button>
                           <button 
                             onClick={() => handleStartInspection(inspection.id)}
                             className="p-2 text-green-600 hover:bg-green-50 rounded-lg transition"
                             title="Iniciar inspeção"
                           >
-                            <FiPlay className="w-4 h-4" />
+                            <span className="text-xl">??</span>
                           </button>
                           <button 
                             onClick={() => handleCancelSchedule(inspection.id)}
                             className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition"
                             title="Cancelar"
                           >
-                            <FiX className="w-4 h-4" />
+                            <span className="text-xl">?</span>
                           </button>
                         </>
                       )}
@@ -831,7 +830,7 @@ const Scheduling = () => {
                           className="p-2 text-green-600 hover:bg-green-50 rounded-lg transition"
                           title="Marcar como concluída"
                         >
-                          <FiCheckCircle className="w-4 h-4" />
+                          <span className="text-xl">?</span>
                         </button>
                       )}
                     </div>
@@ -847,7 +846,7 @@ const Scheduling = () => {
       {filteredInspections.length === 0 && (
         <div className="card p-12 text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-neutral-100 mb-4">
-            <FiCalendar className="w-8 h-8 text-neutral-400" />
+            <span className="w-8 h-8 text-neutral-400" />
           </div>
           <h3 className="text-lg font-semibold text-neutral-900 mb-2">
             Nenhum agendamento encontrado
@@ -869,7 +868,7 @@ const Scheduling = () => {
               onClick={() => setShowNewScheduleModal(true)}
               className="btn btn-primary flex items-center gap-2"
             >
-              <FiPlus className="w-4 h-4" />
+              <span className="text-xl">?</span>
               Criar Primeiro Agendamento
             </button>
           </div>
