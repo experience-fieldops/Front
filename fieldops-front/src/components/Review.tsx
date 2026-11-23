@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { FiSearch, FiFilter, FiCheckCircle, FiX, FiEye, FiDownload, FiAlertCircle, FiClock, FiFileText, FiPercent, FiUser, FiMapPin, FiCalendar } from 'react-icons/fi';
 
 interface Inspection {
   id: number;
@@ -256,7 +255,7 @@ const Review = () => {
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
           <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
-            <FiCheckCircle className="w-5 h-5 text-primary-600" />
+            <span className="text-xl">?</span>
           </div>
           <div>
             <h2 className="text-2xl font-bold text-neutral-900">Revisão de Inspeções</h2>
@@ -370,7 +369,7 @@ const Review = () => {
           <div className="flex-1">
             <div className="relative max-w-md">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FiSearch className="text-neutral-400" />
+                <span className="text-xl">??</span>
               </div>
               <input
                 type="text"
@@ -385,7 +384,7 @@ const Review = () => {
           <div className="flex flex-wrap gap-3">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FiFilter className="text-neutral-400" />
+                <span className="text-xl">??</span>
               </div>
               <select
                 value={selectedStatus}
